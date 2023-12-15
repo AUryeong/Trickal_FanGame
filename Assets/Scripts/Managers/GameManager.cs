@@ -1,20 +1,10 @@
-﻿using DG.Tweening;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
-
-public enum SceneLinkType
-{
-    Lobby,
-    InGame
-}
 
 public class GameManager : Singleton<GameManager>
 {
     private const int TARGET_FRAME_RATE = 60;
-    private readonly Vector2 CAMERA_RENDER_SIZE = new(720, 1600);
-
-    [Space(20f)] [SerializeField] private Image blackFade;
-    private const float BLACK_FADE_DURATION = 0.75f;
+    private readonly Vector2 CAMERA_RENDER_SIZE = new(1920, 1080);
 
     protected override void OnCreated()
     {

@@ -5,7 +5,7 @@ public enum ESoundType
 {
     Bgm,
     Sfx,
-    End
+    Max
 }
 
 public class SoundManager : Singleton<SoundManager>
@@ -30,13 +30,18 @@ public class SoundManager : Singleton<SoundManager>
             audioClips.Add(clip.name, clip);
 
         AddAudioInfo(ESoundType.Bgm).audioSource.loop = true;
-        for (var soundType = ESoundType.Bgm; soundType <= ESoundType.End;)
+        for (var soundType = ESoundType.Bgm; soundType <= ESoundType.Max;)
         {
             AddAudioInfo(++soundType);
         }
     }
 
     protected override void OnReset()
+    {
+        StopAllSounds();
+    }
+
+    public void StopAllSounds()
     {
         foreach (var audioInfo in audioInfos.Values)
             audioInfo.audioSource.Stop();

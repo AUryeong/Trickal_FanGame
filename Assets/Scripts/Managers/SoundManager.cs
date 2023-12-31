@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,6 +23,7 @@ public class SoundManager : Singleton<SoundManager>
     private readonly Dictionary<ESoundType, AudioInfo> audioInfos = new();
 
     protected override bool IsDontDestroying => true;
+    private const string AUDIO_SOURCE_NAME_BY_PITCH = "Pitch"; 
 
     protected override void OnCreated()
     {
@@ -29,11 +31,11 @@ public class SoundManager : Singleton<SoundManager>
         foreach (var clip in clips)
             audioClips.Add(clip.name, clip);
 
-        AddAudioInfo(ESoundType.Bgm).audioSource.loop = true;
-        for (var soundType = ESoundType.Bgm; soundType <= ESoundType.Max;)
-        {
-            AddAudioInfo(++soundType);
-        }
+        for (var soundType = ESoundType.Bgm; soundType < ESoundType.Max;soundType++)
+            AddAudioInfo(soundType);
+
+        var audioSource = audioInfos[ESoundType.Sfx].audioSource;
+        PoolManager.Instance.JoinPoolingData(AUDIO_SOURCE_NAME_BY_PITCH, audioSource.gameObject);
     }
 
     protected override void OnReset()
@@ -53,7 +55,7 @@ public class SoundManager : Singleton<SoundManager>
         audioInfos[soundType].audioSource.volume = sound;
     }
 
-    private AudioInfo AddAudioInfo(ESoundType soundType)
+    private void AddAudioInfo(ESoundType soundType)
     {
         var audioSourceObj = new GameObject(soundType.ToString());
         audioSourceObj.transform.SetParent(transform);
@@ -63,8 +65,9 @@ public class SoundManager : Singleton<SoundManager>
             audioSource = audioSourceObj.AddComponent<AudioSource>(),
             audioVolume = 1
         };
+        if(soundType == ESoundType.Bgm)
+            audioInfo.audioSource.loop = true;
         audioInfos.Add(soundType, audioInfo);
-        return audioInfo;
     }
 
     public AudioSource GetAudioSource(ESoundType soundType = ESoundType.Sfx)
@@ -72,7 +75,7 @@ public class SoundManager : Singleton<SoundManager>
         return audioInfos[soundType].audioSource;
     }
 
-    public AudioClip PlaySound(string soundName, ESoundType soundType, float multipleVolume = 1, float pitch = 1, bool isOneShot = false)
+    public AudioClip PlaySound(string soundName, ESoundType soundType = ESoundType.Sfx, float multipleVolume = 1, float pitch = 1)
     {
         if (string.IsNullOrEmpty(soundName))
         {
@@ -89,8 +92,11 @@ public class SoundManager : Singleton<SoundManager>
         var audioInfo = audioInfos[soundType];
         var audioSource = audioInfo.audioSource;
 
-        audioSource.pitch = pitch;
-        audioSource.loop = !isOneShot;
+        if (Math.Abs(pitch - audioSource.pitch) > 0.03f)
+        {
+            audioSource = PoolManager.Instance.Init(AUDIO_SOURCE_NAME_BY_PITCH, transform).GetComponent<AudioSource>();
+            audioSource.pitch = pitch;
+        }
 
         if (soundType.Equals(ESoundType.Bgm))
         {

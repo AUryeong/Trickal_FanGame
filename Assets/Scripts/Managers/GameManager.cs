@@ -15,6 +15,12 @@ public class GameManager : Singleton<GameManager>
         OnReset();
     }
 
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.A))
+            SoundManager.Instance.PlaySound("alice", ESoundType.Sfx);
+    }
+
     protected override void OnReset()
     {
         SetResolution();

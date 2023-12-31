@@ -1,5 +1,4 @@
 using System;
-using System.Collections.Generic;
 using UnityEngine;
 
 
@@ -10,7 +9,7 @@ public class GameData
 
 public class SaveManager : Singleton<SaveManager>
 {
-    public string prefsName = "Trickal_Fan";
+    public string prefsName = "Trickcal_Fan";
 
     private GameData gameData;
 

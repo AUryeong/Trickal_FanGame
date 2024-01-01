@@ -1,0 +1,111 @@
+
+Sion.png
+size: 123,46
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: false
+  xy: 33, 2
+  size: 11, 8
+  orig: 11, 8
+  offset: 0, 0
+  index: -1
+Cloak Back
+  rotate: true
+  xy: 26, 12
+  size: 32, 21
+  orig: 32, 21
+  offset: 0, 0
+  index: -1
+Cloak Front
+  rotate: true
+  xy: 2, 9
+  size: 35, 22
+  orig: 35, 22
+  offset: 0, 0
+  index: -1
+Head
+  rotate: true
+  xy: 49, 15
+  size: 29, 27
+  orig: 29, 27
+  offset: 0, 0
+  index: -1
+Left Arm
+  rotate: true
+  xy: 22, 3
+  size: 4, 9
+  orig: 4, 9
+  offset: 0, 0
+  index: -1
+Left Hand
+  rotate: true
+  xy: 2, 2
+  size: 5, 8
+  orig: 5, 8
+  offset: 0, 0
+  index: -1
+Left Leg
+  rotate: false
+  xy: 46, 2
+  size: 7, 8
+  orig: 7, 8
+  offset: 0, 0
+  index: -1
+Left Thigh
+  rotate: false
+  xy: 112, 5
+  size: 7, 13
+  orig: 7, 13
+  offset: 0, 0
+  index: -1
+Right Arm
+  rotate: false
+  xy: 70, 4
+  size: 4, 9
+  orig: 4, 9
+  offset: 0, 0
+  index: -1
+Right Hand
+  rotate: true
+  xy: 12, 2
+  size: 5, 8
+  orig: 5, 8
+  offset: 0, 0
+  index: -1
+Right Leg
+  rotate: true
+  xy: 112, 20
+  size: 7, 8
+  orig: 7, 8
+  offset: 0, 0
+  index: -1
+Right Thigh
+  rotate: true
+  xy: 55, 4
+  size: 9, 13
+  orig: 9, 13
+  offset: 0, 0
+  index: -1
+Side Tail
+  rotate: true
+  xy: 78, 29
+  size: 15, 43
+  orig: 15, 43
+  offset: 0, 0
+  index: -1
+Skirt
+  rotate: true
+  xy: 78, 4
+  size: 23, 14
+  orig: 23, 14
+  offset: 0, 0
+  index: -1
+mask
+  rotate: false
+  xy: 94, 10
+  size: 16, 17
+  orig: 16, 17
+  offset: 0, 0
+  index: -1

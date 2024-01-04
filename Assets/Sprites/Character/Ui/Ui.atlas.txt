@@ -1,0 +1,104 @@
+
+Ui.png
+size: 90,78
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Body
+  rotate: false
+  xy: 62, 17
+  size: 16, 19
+  orig: 16, 19
+  offset: 0, 0
+  index: -1
+Clover
+  rotate: false
+  xy: 57, 45
+  size: 31, 31
+  orig: 31, 31
+  offset: 0, 0
+  index: -1
+Head
+  rotate: false
+  xy: 2, 2
+  size: 38, 31
+  orig: 38, 31
+  offset: 0, 0
+  index: -1
+Left Arm
+  rotate: false
+  xy: 71, 3
+  size: 6, 12
+  orig: 6, 12
+  offset: 0, 0
+  index: -1
+Left Hand
+  rotate: true
+  xy: 80, 35
+  size: 8, 7
+  orig: 8, 7
+  offset: 0, 0
+  index: -1
+Left Leg
+  rotate: false
+  xy: 79, 6
+  size: 7, 9
+  orig: 7, 9
+  offset: 0, 0
+  index: -1
+Right Leg
+  rotate: false
+  xy: 79, 6
+  size: 7, 9
+  orig: 7, 9
+  offset: 0, 0
+  index: -1
+Left Thigh
+  rotate: false
+  xy: 62, 2
+  size: 7, 13
+  orig: 7, 13
+  offset: 0, 0
+  index: -1
+Right Thigh
+  rotate: false
+  xy: 62, 2
+  size: 7, 13
+  orig: 7, 13
+  offset: 0, 0
+  index: -1
+Pony Tail
+  rotate: false
+  xy: 42, 3
+  size: 18, 33
+  orig: 18, 33
+  offset: 0, 0
+  index: -1
+Right Arm
+  rotate: true
+  xy: 57, 38
+  size: 5, 10
+  orig: 5, 10
+  offset: 0, 0
+  index: -1
+Right Hand
+  rotate: false
+  xy: 80, 26
+  size: 7, 7
+  orig: 7, 7
+  offset: 0, 0
+  index: -1
+clove_2
+  rotate: false
+  xy: 2, 35
+  size: 21, 41
+  orig: 21, 41
+  offset: 0, 0
+  index: -1
+frog
+  rotate: true
+  xy: 25, 38
+  size: 38, 30
+  orig: 38, 30
+  offset: 0, 0
+  index: -1
